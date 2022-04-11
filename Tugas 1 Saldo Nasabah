@@ -1,0 +1,19 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+     
+        Scanner input = new Scanner (System.in);
+        int saldo = input.nextInt();
+        int setoran = input.nextInt();
+        System.out.println(saldoAkhir(saldo, setoran));
+    }
+    
+    public static double saldoAkhir(int saldo, int setoran){
+        int saldo1 = saldo+setoran-7000;
+        double saldoAkhir = (saldo1*0.0005)+saldo1;
+        return saldoAkhir;
+    }
+}
