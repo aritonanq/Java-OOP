@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+Scanner input = new Scanner (System.in);
+        String teks = input.nextLine();
+        int n = input.nextInt();
+        geser(teks, n);
+    }
+    
+    public static void geser (String teks, int n){
+        int [] angka = new int [teks.length()];
+        for(int i = 0; i<teks.length(); i++){
+            angka[i] = (int) teks.charAt(i);
+            if(angka[i] == 32){
+            }
+            else {
+            angka[i] = angka[i]+n;
+            
+            if(angka[i] > 123){
+                angka[i] = angka[i]-26;
+            }
+            }
+            System.out.print((char)angka[i]);
+        }
+        System.out.println();
+        
+    }
+}
