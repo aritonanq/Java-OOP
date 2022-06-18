@@ -1,0 +1,35 @@
+package inheritance;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Manusia mns1 = new Manusia("Kenan Ahmad", "177101983", true, false);
+        System.out.println(mns1.toString() + "\n");
+        Manusia mns2 = new Manusia("Aura Kasih", "177101111", false, false);
+        System.out.println(mns2.toString() + "\n");
+        Manusia mns3 = new Manusia("Muhammad Afnan", "177101288", true, true);
+        System.out.println(mns3.toString() + "\n"+"\nTOTAL MANUSIA\t: 3 orang\n");
+        
+        MahasiswaFilkom mhs1 = new MahasiswaFilkom("Lee Taeyong", "177101234", true, false, "1853564335363", 3.65);
+        System.out.println(mhs1.toString() + "\n");
+        MahasiswaFilkom mhs2 = new MahasiswaFilkom("Yu Karina", "177101254", false, false, "1575437365463", 3.49);
+        System.out.println(mhs2.toString() + "\n");
+        MahasiswaFilkom mhs3 = new MahasiswaFilkom("Kim Winter", "177101967", false, true, "2025602345753", 3.55);
+        System.out.println(mhs3.toString() + "\n"+"\nTOTAL MAHASISWA\t: 3 orang\n");
+        
+        Pekerja pkj1 = new Pekerja(7, 23, "323102254357", "Lee Jeno", "177101123", true, true);
+        System.out.println(pkj1.toString() + "\n");
+        Pekerja pkj2 = new Pekerja(9, 19, "141102735355", "Jung Jinsoul", "177101285", false, true);
+        System.out.println(pkj2.toString() + "\n");
+        Pekerja pkj3 = new Pekerja(6, 22, "492102485433", "Jeon Heejin", "177101355", false, false);
+        System.out.println(pkj3.toString() + "\n"+"\nTOTAL PEKERJA\t: 3 orang\n");
+        
+        Manajer mnj1 = new Manajer(9, 24, "204837693345", "Park Jimin", "177101246", true, false, 2300);
+        System.out.println(mnj1.toString() + "\n");
+        Manajer mnj2 = new Manajer(7, 18, "758837803534", "Olivia Hye", "177101298", false, true, 1200);
+        System.out.println(mnj2.toString() + "\n");
+        Manajer mnj3 = new Manajer(10, 20, "605837923455", "Hwang Yeji", "177101346", false, true, 1900);
+        System.out.println(mnj3.toString() + "\n"+"\nTOTAL MANAJER\t: 3 orang\n");
+    }
+
+}
