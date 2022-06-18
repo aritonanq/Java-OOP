@@ -1,0 +1,23 @@
+
+package mobil;
+import java.util.ArrayList;
+    class CarData {
+        ArrayList <Car> carList = new ArrayList <Car>();
+
+        public void addCar(String carType, String polNum, String merk){
+            Car tambah = new Car (carType, polNum, merk, true);
+            carList.add(tambah);
+        }   
+        public void listOfCar(){
+            System.out.println("==========================");
+            System.out.println(" DAFTAR MOBIL");
+            System.out.println("==========================");
+            for (Car tampil : carList){
+                System.out.println("TIPE MOBIL : "+tampil.getCarType());
+                System.out.println("NO. POLISI : "+tampil.getPolNum());
+                System.out.println("MERK MOBIL : "+tampil.getMerk());
+                System.out.println("==========================");
+            }
+            System.out.println("");
+        }
+}
