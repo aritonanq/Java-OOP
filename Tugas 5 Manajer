@@ -1,0 +1,24 @@
+
+package inheritance;
+class Manajer extends Pekerja {
+    private int lamaKerja;
+    
+    Manajer(int jamKerja, int hariKerja, String NIP, String nama, String NIK, boolean jenisKelamin, boolean menikah, int lamaKerja){
+        super(jamKerja, hariKerja, NIP, nama, NIK, jenisKelamin, menikah);
+        this.lamaKerja = lamaKerja;
+    }
+    
+    public int getLamaKerja(){
+        return lamaKerja;
+    }
+    public void setLamaKerja (int lamaKerja){
+        this.lamaKerja = lamaKerja;
+    }
+    public String toString(){
+        super.setTunjangan(15.0);
+        super.setBonus(super.getBonus()*0.3);
+        return super.toString()+"\nLama Kerja\t: "+lamaKerja+" hari";
+    }
+}
+    
+
