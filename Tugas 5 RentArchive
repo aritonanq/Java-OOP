@@ -1,0 +1,29 @@
+package mobil;
+import java.util.ArrayList;
+    class RentArchive {
+         private ArrayList <CarRent> rentData = new ArrayList <CarRent>();
+         
+         public void Rent(CarRider rider, Car car, int rentDur){
+             if(car.isStatus() == true){
+             CarRent tmbh = new CarRent(rider, car, rentDur);
+             rentData.add(tmbh);
+             System.out.println("Mobil berhasil disewa");
+             car.setStatus(false);
+             }
+             else{
+                 System.out.println("Maaf, mobil sudah disewa");
+             }
+         }
+         public void info(){
+             System.out.println("==========================");
+             System.out.println("INFORMASI PELANGGAN");
+             System.out.println("==========================");
+             for (CarRent info : rentData){
+             System.out.println("NAMA PEMINJAM : "+info.getRider().getName());
+             System.out.println("TIPE MOBIL : "+info.getCar().getCarType());
+             System.out.println("NO. POLISI : "+info.getCar().getPolNum());
+             System.out.println("LAMA RENTAL : "+info.getRentDur());
+             System.out.println("==========================");
+             }
+         }
+}
