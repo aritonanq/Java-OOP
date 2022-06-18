@@ -1,0 +1,18 @@
+
+package ExceptionHandling;
+
+public class Titan extends Character{
+    
+    public Titan(int defense, int attack, int HP){
+        super(defense, attack, HP);
+    }
+    public boolean attack(){
+        double hitChance = Math.random();
+        if(hitChance > 0.4){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
