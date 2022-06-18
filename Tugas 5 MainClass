@@ -1,0 +1,29 @@
+
+package mobil;
+
+public class MainClass {
+    public static void main(String[] args) {
+        CarRider lauda = new CarRider("Niki Lauda", 24, "081193445674");
+        CarRider lewis = new CarRider("Lewis Halton", 53, "089856433556");
+        CarRider arto = new CarRider("Fernando Arto", 36, "081256537766");
+        CarRider prost = new CarRider("Alain Prost", 20, "083274689388");
+        
+        CarData data = new CarData();
+        data.addCar("Off Roader", "N 3425 CD", "Isuzu");
+        data.addCar("Van", "N 1122 EM", "Volkswagen Caravelle");
+        data.addCar("Pick Up", "N 4533 RD", "Daihatsu");
+        data.addCar("MPV", "N 3154 EN", "Toyota");
+        
+        data.listOfCar();
+        
+        RentArchive arsip = new RentArchive();
+        arsip.Rent(lauda, data.carList.get(3), 8);
+        arsip.Rent(lewis, data.carList.get(2), 10);
+        arsip.Rent(arto, data.carList.get(2),3);
+        arsip.Rent(prost, data.carList.get(0),5);
+        
+        System.out.println("");
+        arsip.info();
+    }
+    
+}
