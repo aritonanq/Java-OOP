@@ -1,0 +1,137 @@
+package ExceptionHandling;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String nama;
+        int character = 0;
+        
+        Magician mgc = new Magician(10, 60, 100);
+        Healer hlr = new Healer(10, 10, 70);
+        Warrior wrr = new Warrior(30, 25, 80);
+        Titan ttn = new Titan(0, 45, 200);
+        
+        System.out.println("Selamat datang di game Defend FILKOM!");
+        System.out.print("Silahkan masukkan nama player : ");
+        nama = in.nextLine();
+        while (character!= 1 && character!= 2 && character!= 3){
+            try{
+                System.out.println("Silahkan pilih karakter yang anda inginkan :\n1. Magician\n2. Healer\n3. Warrior");
+                character = in.nextInt();
+                if (character > 3 || character < 1) throw new NumberFormatException();
+            }
+            catch (NumberFormatException e){
+                System.out.println("Masukan harus berupa angka dari 1 - 3!");
+            }
+            catch (InputMismatchException e){
+                System.out.println("Masukan harus berupa angka!");
+                in.next();
+            }
+        }
+        
+        System.out.println("Selamat datang, " + nama+"!");
+        
+        switch (character){
+            case 1:
+                int i = 1;
+                mgc.info();
+                while(ttn.getHP() != 0 && mgc.getHP() != 0){
+                System.out.println("========== TURN "+i+" ==========");
+                if (mgc.attack()){
+                    ttn.receiveDamage(mgc.getAttack());
+                }
+                else if (ttn.attack()){
+                    mgc.receiveDamage(ttn.getAttack());
+                }
+                i++;
+                System.out.println("Enemy's HP : "+ttn.getHP());
+                System.out.println(nama+"'s HP : "+mgc.getHP());
+                }
+                
+                System.out.println("================================");
+                if (mgc.getHP() == 0){
+                    System.out.println("Titan menang\n");
+                }
+                else if (ttn.getHP() == 0){
+                    System.out.println(nama+" menang\n");
+                }
+                
+                System.out.println("============ PLAYER ============");
+                mgc.info();
+                System.out.println("\n============ ENEMY =============");
+                ttn.info();
+            
+            break;
+                
+            case 2:
+                int j = 1;
+                hlr.info();
+                while(ttn.getHP() != 0 && hlr.getHP() != 0){
+                System.out.println("========== TURN "+j+" ==========");
+                
+                if(j%2 == 0){
+                    hlr.heal();
+                }
+                
+                if (hlr.attack()){
+                    ttn.receiveDamage(hlr.getAttack());
+                }
+                else if (ttn.attack()){
+                    hlr.receiveDamage(ttn.getAttack());
+                }
+                
+                j++;
+                System.out.println("Enemy's HP : "+ttn.getHP());
+                System.out.println(nama+"'s HP : "+hlr.getHP());
+                }
+                
+                System.out.println("================================");
+                if (hlr.getHP() == 0){
+                    System.out.println("Titan menang\n");
+                }
+                else if (ttn.getHP() == 0){
+                    System.out.println(nama+" menang\n");
+                }
+                
+                System.out.println("============ PLAYER ============");
+                hlr.info();
+                System.out.println("\n============ ENEMY =============");
+                ttn.info();
+                
+            break;
+            
+        case 3:
+                int k = 1;
+                wrr.info();
+                while(ttn.getHP() != 0 && wrr.getHP() != 0){
+                System.out.println("========== TURN "+k+" ==========");
+                if (wrr.attack()){
+                    ttn.receiveDamage(wrr.getAttack());
+                }
+                else if (ttn.attack()){
+                    wrr.receiveDamage(ttn.getAttack());
+                }
+                k++;
+                System.out.println("Enemy's HP : "+ttn.getHP());
+                System.out.println(nama+"'s HP : "+wrr.getHP());
+                }
+                
+                System.out.println("================================");
+                if (wrr.getHP() == 0){
+                    System.out.println("Titan menang\n");
+                }
+                else if (ttn.getHP() == 0){
+                    System.out.println(nama+" menang\n");
+                }
+                
+                System.out.println("============ PLAYER ============");
+                wrr.info();
+                System.out.println("\n============ ENEMY =============");
+                ttn.info();
+            
+            break;
+         }
+    }
+}
