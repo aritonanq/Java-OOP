@@ -1,0 +1,72 @@
+
+package inheritance;
+
+public class Manusia {
+    private String nama, NIK;
+    private boolean jenisKelamin, menikah;
+    private double tunjangan, pendapatan;
+    
+    Manusia(String nama, String NIK, boolean jenisKelamin, boolean menikah){
+        this.nama = nama;
+        this.NIK = NIK;
+        this.jenisKelamin = jenisKelamin;
+        this.menikah = menikah;
+    }
+
+    public String getNama(){
+        return nama;
+    }
+    public void setNama(String nama){
+        this.nama = nama;
+    }
+    public String getNIK(){
+        return NIK;
+    }
+    public void setNIK(String NIK){
+        this.NIK = NIK;
+    }
+    public String getJenisKelamin(){
+        if(jenisKelamin == true){
+            return "Laki-laki";
+        }
+        else {
+            return "Perempuan";
+        }
+    }
+     public double getTunjangan(){
+        if(menikah == true){
+            if (jenisKelamin == true){
+                tunjangan = tunjangan+25.0;
+            }
+            else {
+                tunjangan = tunjangan+20.0;
+            }
+        }
+        else {
+            tunjangan = tunjangan+15.0;
+        }
+        return tunjangan;
+    }
+    public void setJenisKelamin(boolean jenisKelamin){
+        this.jenisKelamin = jenisKelamin;
+    }
+    public boolean getMenikah(){
+        return menikah;
+    }
+    public void setMenikah(boolean menikah){
+        this.menikah = menikah;
+    }
+    public void setPendapatan(double pendapatan){
+        this.pendapatan = pendapatan;
+    }
+    public void setTunjangan(double tunjangan){
+        this.tunjangan = tunjangan;
+    }
+    public double getPendapatan(){
+        return pendapatan+getTunjangan();
+    }
+    
+    public String toString(){
+        return "Nama\t\t: "+nama+"\nNIK\t\t: "+NIK+"\nJenis Kelamin\t: "+getJenisKelamin()+"\nPendapatan\t: "+getPendapatan()+"$";
+    }
+}
