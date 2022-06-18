@@ -1,0 +1,32 @@
+
+package Pegawai;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Pegawai pgwt = new PegawaiTetap("Natasha", "350728490327424892345", 2500000);
+        Pegawai pgwt2 = new PegawaiTetap("Romanoff", "350728490327424892346", 1600000);
+        Pegawai pgwt3 = new PegawaiTetap("Evan", "350728490327424892347", 2100000);
+        
+        Pegawai pgwh = new PegawaiHarian("Chris", "350728490327424892348", 6000, 55);
+        Pegawai pgwh2 = new PegawaiHarian("Johansson", "350728490327424892349", 9500, 36);
+        Pegawai pgwh3 = new PegawaiHarian("Scarlett", "350728490327424892350", 7500, 45);
+        
+        Pegawai sls = new Sales("Stephen", "350728490327424892351", 64, 55000);
+        Pegawai sls2 = new Sales("Strange", "350728490327424892352", 53, 47000);
+        Pegawai sls3 = new Sales("Tony", "3507284903274248923453", 56, 52000);
+        
+        System.out.println(pgwt.toString()+"\n");
+        System.out.println(pgwt2.toString()+"\n");
+        System.out.println(pgwt3.toString()+"\n");
+        
+        System.out.println(pgwh.toString()+"\n");
+        System.out.println(pgwh2.toString()+"\n");
+        System.out.println(pgwh3.toString()+"\n");
+        
+        System.out.println(sls.toString()+"\n");
+        System.out.println(sls2.toString()+"\n");
+        System.out.println(sls3.toString());
+    }
+    
+}
