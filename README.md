@@ -1,1 +1,1 @@
-Collection of assigments from Object-Oriented Programming course.
+Collection of assignments from Object-Oriented Programming course.
